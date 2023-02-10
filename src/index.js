@@ -6,36 +6,31 @@ import Currency from './currency.js';
 
 // Business Logic
 
-function getCurrency(generate) {
-  Currency.getCurrency(generate)
-    .then(function(response) {
-      if (response.main) {
-        printElements(response, generate);
-      } else {
-        printError(response, generate);
-      }
-    });
+function generateCurrency(generate) {
+  let promise = Currency.generateCurrency(generate);
+  promise.then(function(response) {
+    printElements(response, generate);
+  }, function(errorMessage){
+    printError(errorMessage);
+  });
 }
 
 // UI Logic
 
-function printElements(response, city) {
-  document.querySelector('#showResponse').innerText = `The humidity in ${city} is ${response.main.humidity}%.
-  The temperature in Kelvins is ${response.main.temp} degrees.`;
+function printElements(response) {
+  document.querySelector('#currency-content').innerText = `The currency is: ${response.currency}`;
 }
 
-function printError(error, city) {
-  document.querySelector('#showResponse').innerText = `There was an error accessing the weather data for ${city}: 
-  ${error}.`;
+function printError(error, generate) {
+  document.querySelector('#currency-content').innerText = `There was an error accessing the thing for ${generate}: ${error.message}`;
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  const city = document.querySelector('#location').value;
-  document.querySelector('#location').value = null;
-  getWeather(city);
+  const generate = document.getElementById('generate-input').value;
+  generateCurrency(generate);
 }
 
-window.addEventListener("load", function() {
-  document.querySelector('form').addEventListener("submit", handleFormSubmission);
-});
+  window.addEventListener("load", function() {
+  document.getElementById("button").addEventListener("click", handleFormSubmission);
+  });
