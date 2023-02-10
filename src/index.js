@@ -4,11 +4,38 @@ import './css/styles.css';
 import Currency from './currency.js';
 
 
-//Business Logic
+// Business Logic
 
+function getCurrency(generate) {
+  Currency.getCurrency(generate)
+    .then(function(response) {
+      if (response.main) {
+        printElements(response, generate);
+      } else {
+        printError(response, generate);
+      }
+    });
+}
 
+// UI Logic
 
+function printElements(response, city) {
+  document.querySelector('#showResponse').innerText = `The humidity in ${city} is ${response.main.humidity}%.
+  The temperature in Kelvins is ${response.main.temp} degrees.`;
+}
 
+function printError(error, city) {
+  document.querySelector('#showResponse').innerText = `There was an error accessing the weather data for ${city}: 
+  ${error}.`;
+}
 
-//UI Logic
+function handleFormSubmission(event) {
+  event.preventDefault();
+  const city = document.querySelector('#location').value;
+  document.querySelector('#location').value = null;
+  getWeather(city);
+}
 
+window.addEventListener("load", function() {
+  document.querySelector('form').addEventListener("submit", handleFormSubmission);
+});
