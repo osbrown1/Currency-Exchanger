@@ -9,6 +9,9 @@ import Currency from './currency.js';
 function generateCurrency(generate) {
   let promise = Currency.generateCurrency(generate);
   promise.then(function(response) {
-    printElements(response, generate)
-  })
+    printElements(response, generate);
+  }, function(errorMessage){
+    printError(errorMessage);
+  });
 }
+
