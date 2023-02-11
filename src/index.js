@@ -4,7 +4,6 @@ import './css/styles.css';
 import Currency from './currency.js';
 
 
-
 async function handleFormSubmission(event) {
   event.preventDefault();
   try {
