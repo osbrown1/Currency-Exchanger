@@ -8,7 +8,7 @@ async function handleFormSubmission(event) {
   event.preventDefault();
   try {
     const exchangeRate = await Currency.getExchangeRate();
-    document.querySelector("#showResponse").innerText = `The latest exchange rate for USD is ${exchangeRate.rate}`;
+    document.querySelector("#showResponse").innerText = `The latest exchange rate for USD is ${exchangeRate.conversion_rates.USD}`;
   } catch (error) {
     document.querySelector("#showResponse").innerText = `An error occurred: ${error}`;
   }
