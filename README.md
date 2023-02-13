@@ -8,8 +8,11 @@
 
 * _JS_
 * _HTML_
+* _CSS_
 * _Webpack_
 * _npm_
+* _eslint_
+* _babel_
 
 
 ## Description
