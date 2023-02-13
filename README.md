@@ -2,7 +2,7 @@
 
 #### By _**Owen Brown**_
 
-#### _This is an application that lets the user convert currency to a different one._
+#### _This is an application that lets the user convert USD currency to a different one._
 
 ## Technologies Used
 
@@ -15,7 +15,7 @@
 ## Description
 
 _The application exchanges currency based on what the user enters in to the field.._
-* _If _
+* _If the user enters 6 and chooses KRW, they'll see that 6 USD is equal to 7603.63 KRW, which is the API's conversion_
 
 ## Setup/Installation Requirements
 
