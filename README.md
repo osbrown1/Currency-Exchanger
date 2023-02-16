@@ -32,18 +32,18 @@ _The application exchanges currency based on what the user enters in to the fiel
 * _Clone this repository to your desktop._ 
 
 * _To get API key:_
-  ->https://www.exchangerate-api.com/ follow this link 
+  ->https://www.exchangerate-api.com/ follow that link 
   ->enter email and click 'Get Free Key!'
-  ->add .env to .gitignore file 
-  ->create a .env file 
+  ->add '.env' to '.gitignore' file 
+  ->create a '.env' file 
   ->The variable that I'm storing in the .env is: API_KEY
 
 * _Install packages:_ 
-  ->in your terminal, run $npm install dotenv-webpack@2.0.0 --save-dev
-  ->npm install
-  ->npm run build
-  ->npm run start (to launch server)
-  ->npm run lint
+  ->in your terminal, run 'npm install dotenv-webpack@2.0.0 --save-dev'
+  ->'npm install'
+  ->'npm run build'
+  ->'npm run start' (to launch server)
+  ->'npm run lint'
 
 ## Known Bugs
 
